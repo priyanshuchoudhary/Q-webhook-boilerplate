@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 "use strict";
 
 const express = require("express");
@@ -25,9 +24,14 @@ const errorHandler = require("./helper/error-handler");
 const config = require("./config")();
 const authMiddleware = require("./helper/basic-auth");
 const helmet = require("helmet");
+// const admin=require('./database/firebase-connector/connection')
+// const db=admin.firestore()
+// const collection= db.collection("Hotel_bookings")
 
 let app = express();
 
+
+ 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(helmet());
@@ -37,6 +41,30 @@ let router = express.Router();
 router.get("/healthcheck", (req, res) => {
     res.status(200).json({ "message": "ok" });
 });
+
+// router.post('/create',async(req,res)=>{
+//     try{
+//         //const BookingId = req.body.BookingId;
+//         const userJson={
+//             BookingId : req.body.BookingId,
+//             uname : req.body.uname,
+//             city : req.body.city,
+//             hotel_name : req.body.hotel_name,
+//             room_type : req.body.room_type,
+//             check_in_date : req.body.check_in_date,
+//             check_out_date : req.body.check_out_date,
+//             price : req.body.price
+//         };
+//         await collection.doc().create(
+//             userJson
+//         )
+
+    
+//     res.send(response);
+//     }catch(error){
+//         res.send(error);
+//     }
+//  })
 
 router.post("/v2beta1/webhook", webhookController);
 

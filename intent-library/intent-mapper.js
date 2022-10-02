@@ -13,15 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 "use strict";
-
 /**
  * Maps dialogflow intent with its controller
  */
 
 const intents = {
-    "Default Welcome Intent": require("./intents/default-welcome-intent")
+    "Default Welcome Intent": require("./intents/Default Welcome Intent"),
+    "Provided City Api Call" : require("./intents/Provided City Api Call"),
+    "Provided Budget" : require("./intents/Provided Budget"),
+    "Provided Budget Yes" : require("./intents/Provided Budget Yes"),
+    "Booking Id Status" : require("./intents/Booking Id Status"),
+    "Booking Event" : require("./intents/Booking Event")
 };
 
 module.exports = intents;
