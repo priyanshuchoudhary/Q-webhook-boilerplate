@@ -24,7 +24,8 @@ const intents = {
     "Provided Budget" : require("./intents/Provided Budget"),
     "Provided Budget Yes" : require("./intents/Provided Budget Yes"),
     "Booking Id Status" : require("./intents/Booking Id Status"),
-    "Booking Event" : require("./intents/Booking Event")
+    "Booking Event" : require("./intents/Booking Event"),
+    "Default Fallback Intent" : require("./intents/Default Fallback Intent")
 };
 
 module.exports = intents;

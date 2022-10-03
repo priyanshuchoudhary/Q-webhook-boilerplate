@@ -1,2 +1,3 @@
 /node_modules
 .DS_Store
+/database/firebase-connector/key.json
